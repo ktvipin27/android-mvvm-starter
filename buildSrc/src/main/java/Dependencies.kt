@@ -22,7 +22,7 @@ object Libs {
     const val MATERIAL_DESIGN = "com.google.android.material:material:1.1.0"
     const val GSON = "com.google.code.gson:gson:2.8.5"
     const val TIMBER = "com.jakewharton.timber:timber:4.7.1"
-
+    const val JAVAX_ANNOTATION = "javax.annotation:jsr250-api:1.0"
 
     object AndroidX {
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.1.0"
@@ -143,6 +143,20 @@ object Libs {
             const val FLIPPER_NETWORK = "com.facebook.flipper:flipper-network-plugin:$version"
             const val FLIPPER_NOOP = "com.facebook.flipper:flipper-noop:$version"
         }
+    }
+
+    object Dagger {
+        private const val version = "2.26"
+        private const val version_assisted = "0.5.2"
+        const val DAGGER = "com.google.dagger:dagger:$version"
+        const val DAGGER_ANDROID = "com.google.dagger:dagger-android:$version"
+        const val DAGGER_ANDROID_SUPPORT = "com.google.dagger:dagger-android-support:$version"
+        const val DAGGER_COMPILER = "com.google.dagger:dagger-compiler:$version"
+        const val DAGGER_PROCESSOR = "com.google.dagger:dagger-android-processor:$version"
+        const val DAGGER2_PROCESSOR =
+            "com.squareup.inject:assisted-inject-processor-dagger2:$version_assisted"
+        const val DAGGER2_ANNOTATIONS =
+            "com.squareup.inject:assisted-inject-annotations-dagger2:$version_assisted"
     }
 
     object Test {

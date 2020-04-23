@@ -88,4 +88,12 @@ dependencies {
     implementation(Libs.Retrofit.RETROFIT)
     implementation(Libs.Retrofit.RETROFIT_GSON_CONVERTER)
 
+    implementation(Libs.Dagger.DAGGER)
+    implementation(Libs.Dagger.DAGGER_ANDROID)
+    implementation(Libs.Dagger.DAGGER_ANDROID_SUPPORT)
+    kapt(Libs.Dagger.DAGGER_COMPILER)
+    kapt(Libs.Dagger.DAGGER_PROCESSOR)
+    kapt(Libs.Dagger.DAGGER2_PROCESSOR)
+    compileOnly(Libs.Dagger.DAGGER2_ANNOTATIONS)
+    compileOnly(Libs.JAVAX_ANNOTATION)
 }
