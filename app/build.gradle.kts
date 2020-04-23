@@ -7,6 +7,7 @@ plugins {
 
 android {
     compileSdkVersion(Versions.Build.COMPILE_SDK_VERSION)
+    kotlinOptions.jvmTarget = "1.8"
 
     defaultConfig {
         applicationId = "com.ktvipin27.mvvmstarter"
@@ -42,14 +43,49 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+
     implementation(Libs.Kotlin.KOTLIN_STD_LIB)
+    implementation(Libs.MATERIAL_DESIGN)
+    implementation(Libs.GSON)
+
     implementation(Libs.AndroidX.APP_COMPAT)
     implementation(Libs.AndroidX.CONSTRAINT_LAYOUT)
     implementation(Libs.AndroidX.ANDROIDX_CORE)
-    implementation(Libs.AndroidX.MATERIAL_DESIGN)
+    implementation(Libs.AndroidX.PAGING_RUNTIME)
+    implementation(Libs.AndroidX.WORK_RUNTIME)
+
     implementation(Libs.AndroidX.Navigation.NAVIGATION_FRAGMENT)
     implementation(Libs.AndroidX.Navigation.NAVIGATION_UI)
+
+    implementation(Libs.AndroidX.Lifecycle.LIVEDATA)
+    implementation(Libs.AndroidX.Lifecycle.VIEWMODEL)
+    implementation(Libs.AndroidX.Lifecycle.VIEWMODEL_SAVED_STATE)
+    kapt(Libs.AndroidX.Lifecycle.LIFECYCLE_COMPILER)
+    implementation(Libs.AndroidX.Lifecycle.LIFECYCLE_PROCESS)
+    implementation(Libs.AndroidX.Lifecycle.LIFECYCLE_EXTENSIONS)
+    implementation(Libs.AndroidX.Lifecycle.LIFECYCLE_SERVICE)
+
+    implementation(Libs.Glide.GLIDE)
+    implementation(Libs.Glide.GLIDE_OKHTTP3)
+    kapt(Libs.Glide.GLIDE_COMPILER)
+
+    implementation(Libs.TIMBER)
+
     implementation(Libs.AndroidX.Test.ESPRESSO_CORE)
     implementation(Libs.AndroidX.Test.Junit.JUNIT)
     implementation(Libs.Test.JUNIT)
+
+    implementation(Libs.AndroidX.Room.ROOM_RUNTIME)
+    implementation(Libs.AndroidX.Room.ROOM_KTX)
+    kapt(Libs.AndroidX.Room.ROOM_COMPILER)
+
+    implementation(Libs.Coroutines.COROUTINES)
+    implementation(Libs.Coroutines.COROUTINES_ANDROID)
+
+    implementation(Libs.Okhttp.OKHTTP_LOGGING_INTERCEPTOR)
+    implementation(Libs.Okhttp.OKHTTP_URL_CONNECTION)
+
+    implementation(Libs.Retrofit.RETROFIT)
+    implementation(Libs.Retrofit.RETROFIT_GSON_CONVERTER)
+
 }
