@@ -6,13 +6,9 @@ import com.ktvipin27.mvvmstarter.MVVMStarter
 import com.ktvipin27.mvvmstarter.di.qualifier.ApplicationContext
 import dagger.Binds
 import dagger.Module
-import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
-@Module(
-    includes = [AndroidSupportInjectionModule::class, ActivityModule::class,
-        ServiceModule::class, BroadcastReceiverModule::class, WorkerModule::class]
-)
+@Module
 abstract class ApplicationModule {
     @Binds
     @Singleton
