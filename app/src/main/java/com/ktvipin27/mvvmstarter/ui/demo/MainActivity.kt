@@ -1,20 +1,23 @@
-package com.ktvipin27.mvvmstarter
+package com.ktvipin27.mvvmstarter.ui.demo
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.*
+import com.ktvipin27.mvvmstarter.R
+import com.ktvipin27.mvvmstarter.base.ViewBindingActivity
+import com.ktvipin27.mvvmstarter.databinding.ActivityMainBinding
+import kotlin.reflect.KFunction1
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ViewBindingActivity<ActivityMainBinding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+    override val viewBinding: KFunction1<LayoutInflater, ActivityMainBinding>
+        get() = ActivityMainBinding::inflate
 
-        fab.setOnClickListener { view ->
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
+        binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
@@ -35,4 +38,6 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
 }

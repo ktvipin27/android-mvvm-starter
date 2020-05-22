@@ -31,6 +31,9 @@ android {
         }
     }
 
+    viewBinding.isEnabled = true
+    dataBinding.isEnabled = true
+
     // To inline the bytecode built with JVM target 1.8 into
     // bytecode that is being built with JVM target 1.6. (e.g. navArgs)
     compileOptions {
@@ -62,6 +65,8 @@ dependencies {
     implementation(Libs.AndroidX.Lifecycle.VIEWMODEL_SAVED_STATE)
     kapt(Libs.AndroidX.Lifecycle.LIFECYCLE_COMPILER)
     implementation(Libs.AndroidX.Lifecycle.LIFECYCLE_PROCESS)
+    implementation(Libs.AndroidX.Lifecycle.LIFECYCLE_COMMON)
+    implementation(Libs.AndroidX.Lifecycle.LIFECYCLE_RUNTIME)
     implementation(Libs.AndroidX.Lifecycle.LIFECYCLE_EXTENSIONS)
     implementation(Libs.AndroidX.Lifecycle.LIFECYCLE_SERVICE)
 

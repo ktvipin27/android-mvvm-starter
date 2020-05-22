@@ -43,6 +43,8 @@ object Libs {
             const val LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:$version"
             const val VIEWMODEL_SAVED_STATE =
                 "androidx.lifecycle:lifecycle-viewmodel-savedstate:$version"
+            const val LIFECYCLE_RUNTIME = "androidx.lifecycle:lifecycle-runtime:$version"
+            const val LIFECYCLE_COMMON = "androidx.lifecycle:lifecycle-common-java8:$version"
             const val LIFECYCLE_EXTENSIONS = "androidx.lifecycle:lifecycle-extensions:$version"
             const val LIFECYCLE_COMPILER = "androidx.lifecycle:lifecycle-compiler:$version"
             const val LIFECYCLE_SERVICE = "androidx.lifecycle:lifecycle-service:$version"
