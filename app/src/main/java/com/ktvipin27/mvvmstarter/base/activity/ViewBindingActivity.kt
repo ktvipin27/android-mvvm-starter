@@ -1,9 +1,8 @@
-package com.ktvipin27.mvvmstarter.base
+package com.ktvipin27.mvvmstarter.base.activity
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.viewbinding.ViewBinding
-import com.ktvipin27.mvvmstarter.extensions.viewBinding
 import kotlin.reflect.KFunction1
 
 /**
@@ -11,7 +10,8 @@ import kotlin.reflect.KFunction1
  */
 abstract class ViewBindingActivity<VB : ViewBinding> : BaseActivity() {
 
-    protected val binding: VB by viewBinding(viewBinding)
+    protected val binding: VB by lazy(LazyThreadSafetyMode.NONE) { viewBinding(layoutInflater) }
+
     protected abstract val viewBinding: KFunction1<LayoutInflater, VB>
 
     override fun onCreate(savedInstanceState: Bundle?) {

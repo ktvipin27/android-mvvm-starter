@@ -1,4 +1,4 @@
-package com.ktvipin27.mvvmstarter.base
+package com.ktvipin27.mvvmstarter.base.activity
 
 import dagger.android.support.DaggerAppCompatActivity
 

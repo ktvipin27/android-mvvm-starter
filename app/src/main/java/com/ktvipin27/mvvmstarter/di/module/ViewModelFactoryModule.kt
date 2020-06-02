@@ -1,23 +1,24 @@
-package com.ktvipin27.mvvmstarter.base
+package com.ktvipin27.mvvmstarter.di.module
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.ktvipin27.mvvmstarter.base.viewmodel.factory.ViewModelFactory
 import com.ktvipin27.mvvmstarter.di.qualifier.ActivityContext
 import com.ktvipin27.mvvmstarter.di.scope.ActivityScope
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
+/**
+ * Created by Vipin KT on 02/06/20
+ */
 @Module
-abstract class BaseActivityModule {
+abstract class ViewModelFactoryModule {
+
     @Binds
     @ActivityScope
-    @ActivityContext
-    abstract fun bindActivityContext(activity: AppCompatActivity): Context
-
-    /*@Binds
-    @ActivityScope
     abstract fun bindViewModelFactory(
-        viewModelFactory: ActivityViewModelFactory
+        viewModelFactory: ViewModelFactory
     ): ViewModelProvider.Factory
 
     @Module
@@ -25,10 +26,9 @@ abstract class BaseActivityModule {
         @Provides
         @ActivityScope
         @ActivityContext
-        @JvmStatic
         fun provideViewModelProvider(
             activity: AppCompatActivity,
             viewModelFactory: ViewModelProvider.Factory
         ): ViewModelProvider = ViewModelProvider(activity, viewModelFactory)
-    }*/
+    }
 }
