@@ -19,6 +19,12 @@ android {
         versionName = Versions.VERSION_NAME
 
         testInstrumentationRunner = Libs.AndroidX.Test.Junit.JUNIT_RUNNER
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
