@@ -21,7 +21,6 @@ abstract class ViewModelFactoryModule {
         viewModelFactory: ViewModelFactory
     ): ViewModelProvider.Factory
 
-    @Module
     companion object {
         @Provides
         @ActivityScope
