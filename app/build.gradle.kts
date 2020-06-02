@@ -10,7 +10,7 @@ android {
     kotlinOptions.jvmTarget = "1.8"
 
     defaultConfig {
-        applicationId = "com.ktvipin27.mvvmstarter"
+        applicationId = "com.ktvipin.mvvmstarter"
 
         minSdkVersion(Versions.Build.MIN_SDK_VERSION)
         targetSdkVersion(Versions.Build.TARGET_SDK_VERSION)
