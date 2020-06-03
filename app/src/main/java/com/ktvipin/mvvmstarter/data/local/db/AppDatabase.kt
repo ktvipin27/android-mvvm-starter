@@ -6,18 +6,18 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.ktvipin.mvvmstarter.data.local.db.converter.PersonToStringConverter
-import com.ktvipin.mvvmstarter.data.local.db.dao.PersonDao
-import com.ktvipin.mvvmstarter.data.local.db.entity.Person
+import com.ktvipin.mvvmstarter.data.local.db.converter.DemoConverter
+import com.ktvipin.mvvmstarter.data.local.db.dao.DemoDao
+import com.ktvipin.mvvmstarter.data.local.db.entity.Demo
 
 @Database(
-    entities = [Person::class],
+    entities = [Demo::class],
     version = 1
 )
-@TypeConverters(PersonToStringConverter::class)
+@TypeConverters(DemoConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun personDao(): PersonDao
+    abstract fun personDao(): DemoDao
 
     companion object {
         private const val DB_NAME = "app-db"
@@ -38,7 +38,7 @@ abstract class AppDatabase : RoomDatabase() {
                 Room.databaseBuilder(context, AppDatabase::class.java, DB_NAME)
 
             return database
-                //.addMigrations()
+                //.addMigrations(MIGRATION_1_2)
                 .addCallback(object : Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)

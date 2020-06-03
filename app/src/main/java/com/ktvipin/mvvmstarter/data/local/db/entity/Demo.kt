@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
  * Created by Vipin KT on 02/06/20
  */
 @Entity
-data class Person(
+data class Demo(
     @PrimaryKey val id: Int,
     val name: String
 )
