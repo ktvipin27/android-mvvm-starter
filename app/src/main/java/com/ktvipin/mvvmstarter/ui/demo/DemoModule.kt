@@ -10,16 +10,16 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 
 @Module(includes = [ViewModelFactoryModule::class])
-abstract class MainModule {
+abstract class DemoModule {
     @Binds
     @ActivityScope
-    abstract fun bindActivity(activity: MainActivity): AppCompatActivity
+    abstract fun bindActivity(activity: DemoActivity): AppCompatActivity
 
     @Binds
     @IntoMap
-    @ViewModelKey(MainViewModel::class)
+    @ViewModelKey(DemoViewModel::class)
     @ActivityScope
-    abstract fun bindViewModel(viewModel: MainViewModel): ViewModel
+    abstract fun bindViewModel(viewModel: DemoViewModel): ViewModel
 
     companion object {
         /*@Provides

@@ -6,17 +6,17 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.Build.COMPILE_SDK_VERSION)
-    kotlinOptions.jvmTarget = "1.8"
+
+    compileSdkVersion(Config.Application.COMPILE_SDK_VERSION)
 
     defaultConfig {
-        applicationId = "com.ktvipin.mvvmstarter"
+        applicationId = Config.Application.APPLICATION_ID
 
-        minSdkVersion(Versions.Build.MIN_SDK_VERSION)
-        targetSdkVersion(Versions.Build.TARGET_SDK_VERSION)
+        versionCode = Config.Application.VERSION_CODE
+        versionName = Config.Application.VERSION_NAME
 
-        versionCode = Versions.VERSION_CODE
-        versionName = Versions.VERSION_NAME
+        minSdkVersion(Config.Application.MIN_SDK_VERSION)
+        targetSdkVersion(Config.Application.TARGET_SDK_VERSION_)
 
         testInstrumentationRunner = Libs.AndroidX.Test.Junit.JUNIT_RUNNER
 
@@ -27,13 +27,34 @@ android {
         }
     }
 
+    /*signingConfigs {
+        create(SigningConfigs.Debug.NAME) {
+            keyAlias = SigningConfigs.Debug.KEY_ALIAS
+            keyPassword = SigningConfigs.Debug.KEY_PASSWORD
+            storePassword = SigningConfigs.Debug.STORE_PASSWORD
+            storeFile = file(SigningConfigs.Debug.STORE_FILE)
+        }
+
+        create(Release.name) {
+            keyAlias = Release.keyAlias
+            keyPassword = Release.keyPassword
+            storePassword = Release.storePassword
+            storeFile = file(Release.storeFile)
+        }
+    }*/
+
     buildTypes {
+        getByName("debug") {
+            buildConfigField("String", Config.Key.API_DOMAIN, "\"${Debug.API_DOMAIN}\"")
+        }
         getByName("release") {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", Config.Key.API_DOMAIN, "\"${Release.API_DOMAIN}\"")
         }
     }
 
@@ -46,7 +67,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-
     kotlinOptions.jvmTarget = "1.8"
 }
 
@@ -107,4 +127,11 @@ dependencies {
     kapt(Libs.Dagger.DAGGER2_PROCESSOR)
     compileOnly(Libs.Dagger.DAGGER2_ANNOTATIONS)
     compileOnly(Libs.JAVAX_ANNOTATION)
+
+    implementation(Libs.Facebook.Stetho.STETHO)
+    implementation(Libs.Facebook.Stetho.STETHO_OKHTTP3)
+    implementation(Libs.Facebook.Flipper.FLIPPER)
+    implementation(Libs.Facebook.Flipper.FLIPPER_NETWORK)
+    //implementation(Libs.Facebook.Flipper.FLIPPER_NOOP)
+    implementation(Libs.Facebook.SOLOADER)
 }

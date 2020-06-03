@@ -4,15 +4,15 @@ import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import com.ktvipin.mvvmstarter.R
 import com.ktvipin.mvvmstarter.base.activity.DataBindingVMActivity
-import com.ktvipin.mvvmstarter.databinding.ActivityMainBinding
+import com.ktvipin.mvvmstarter.databinding.ActivityDemoBinding
 
-class MainActivity : DataBindingVMActivity<ActivityMainBinding, MainViewModel>() {
+class DemoActivity : DataBindingVMActivity<ActivityDemoBinding, DemoViewModel>() {
 
-    override val viewModelClass: Class<MainViewModel>
-        get() = MainViewModel::class.java
+    override val viewModelClass: Class<DemoViewModel>
+        get() = DemoViewModel::class.java
 
     override val layoutId: Int
-        get() = R.layout.activity_main
+        get() = R.layout.activity_demo
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)

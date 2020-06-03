@@ -12,7 +12,7 @@ import javax.inject.Singleton
 @Component(
     modules = [AndroidSupportInjectionModule::class, ApplicationModule::class, ActivityModule::class,
         ServiceModule::class, BroadcastReceiverModule::class, WorkerModule::class,
-        DatabaseModule::class, TimberModule::class]
+        DatabaseModule::class, TimberModule::class, NetworkModule::class, ApiModule::class, RepositoryModule::class]
 )
 interface ApplicationComponent : AndroidInjector<MVVMStarter> {
     @Component.Builder
